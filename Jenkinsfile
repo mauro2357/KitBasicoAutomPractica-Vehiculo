@@ -85,7 +85,7 @@
 						extensions: [[$class: 'RelativeTargetDirectory', 
 							relativeTargetDir: 'KitBasicoAutomPractica-Vehiculo-Ops']], 
 						submoduleCfg: [], 
-						userRemoteConfigs: [[url: 'https://github.com/mmedrano/KitBasicoAutomPractica-Vehiculo.git']]])     
+						userRemoteConfigs: [[url: 'https://github.com/mauro2357/KitBasicoAutomPractica-Vehiculo.git']]])     
 			      }
 					bat 'mkdir "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
 					bat 'xcopy "KitBasicoAutomPractica-Vehiculo-Ops/config" "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
