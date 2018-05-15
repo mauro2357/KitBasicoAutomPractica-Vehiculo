@@ -5,7 +5,7 @@ import pe.sura.apivehiculo.entidades.Vehiculo;
 public class VehiculoFacade implements IVehiculoFacade {
 
 	@Override
-	public Vehiculo afiliar(Vehiculo vehiculo) {
+	public Vehiculo validar(Vehiculo vehiculo) {
 		// TODO Auto-generated method stub
 		return null;
 	}
