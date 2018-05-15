@@ -7,7 +7,8 @@ public class VehiculoFacade implements IVehiculoFacade {
 
 	@Override
 	public Vehiculo validar(Vehiculo vehiculo) {
-			return null;
+			
+		return null;
 	}
 	
 	
