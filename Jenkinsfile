@@ -36,8 +36,8 @@
 			
 			stage('Generar desplegable') { 
 				steps { 
-					powershell 'wget http://localhost:8090/shutdown'
-					powershell 'wget http://localhost:8091/shutdown'
+					powershell 'wget http://localhost:8585/shutdown'
+					powershell 'wget http://localhost:8586/shutdown'
 					bat "build.bat"
 					
 				}
@@ -85,7 +85,7 @@
 						extensions: [[$class: 'RelativeTargetDirectory', 
 							relativeTargetDir: 'KitBasicoAutomPractica-Vehiculo-Ops']], 
 						submoduleCfg: [], 
-						userRemoteConfigs: [[url: 'https://github.com/mmedrano/KitBasicoAutomPractica-Vehiculo.git']]])     
+						userRemoteConfigs: [[url: 'https://github.com/mauro2357/KitBasicoAutomPractica-Vehiculo.git']]])     
 			      }
 					bat 'mkdir "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
 					bat 'xcopy "KitBasicoAutomPractica-Vehiculo-Ops/config" "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
