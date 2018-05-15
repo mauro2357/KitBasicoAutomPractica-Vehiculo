@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import pe.sura.apivehiculo.entidades.VehiculoValidaResponse;
+
 @RestController
 @RequestMapping("/api")
 public class VehiculoController {
@@ -15,13 +17,13 @@ public class VehiculoController {
 	}
 	  
 	@GetMapping("/vehiculo/valida/{placa}") 
-	public String getValidacion(@PathVariable(value = "placa") String placa) {
-		return "Metodo para validar " + placa;
+	public VehiculoValidaResponse getValidacion(@PathVariable(value = "placa") String placa) {
+		return new VehiculoValidaResponse(true, "");
 	}
 	
 	@GetMapping("/vehiculo/{placa}")
-	public String getZonaCirculacion(@PathVariable(value = "placa") String placa) {
-		return "Metodo para ZonaCirculacion " + placa ;
+	public VehiculoValidaResponse getZonaCirculacion(@PathVariable(value = "placa") String placa) {
+		return new VehiculoValidaResponse(true, "Circula por Lima");
 	}
    
 }
