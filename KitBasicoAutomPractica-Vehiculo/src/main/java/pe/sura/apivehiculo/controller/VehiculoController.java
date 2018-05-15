@@ -22,5 +22,5 @@ public class VehiculoController {
 	public String getZonaCirculacion() {
 		return "Metodo para ZonaCirculacion";
 	}
-  
+   
 }
