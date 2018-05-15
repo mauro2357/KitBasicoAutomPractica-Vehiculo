@@ -1,6 +1,7 @@
 package pe.sura.apivehiculo.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,15 +13,15 @@ public class VehiculoController {
 	public String getSaludo() {
 		return "Hola - API Vehiculo";
 	}
-	
-	@GetMapping("/vehiculo/valida/{placa}")
-	public String getValidacion() {
-		return "Metodo para validar";
+	  
+	@GetMapping("/vehiculo/valida/{placa}") 
+	public String getValidacion(@PathVariable(value = "placa") String placa) {
+		return "Metodo para validar " + placa;
 	}
 	
 	@GetMapping("/vehiculo/{placa}")
-	public String getZonaCirculacion() {
-		return "Metodo para ZonaCirculacion";
+	public String getZonaCirculacion(@PathVariable(value = "placa") String placa) {
+		return "Metodo para ZonaCirculacion " + placa ;
 	}
    
 }
