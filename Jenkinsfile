@@ -12,14 +12,14 @@
 			}
 		
 			
-			//stage('Analisis de código') { 
-			//	steps { 
-			//		withSonarQubeEnv('SonarQubeLocal') {
-			//			bat 'anali_code.bat'
-			//		}
+			stage('Analisis de código') { 
+				steps { 
+					withSonarQubeEnv('SonarQubeLocal') {
+						bat 'anali_code.bat'
+					}
 					
-			//	}
-			//}
+				}
+			}
 			
 			//stage('Verificar calidad técnica') { 
 			//	steps { 
