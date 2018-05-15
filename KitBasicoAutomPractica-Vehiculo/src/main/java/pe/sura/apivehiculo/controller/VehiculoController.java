@@ -13,9 +13,14 @@ public class VehiculoController {
 		return "Hola - API Vehiculo";
 	}
 	
-	@GetMapping("/vehiculo/validar")
+	@GetMapping("/vehiculo/valida/{placa}")
 	public String getValidacion() {
 		return "Metodo para validar";
 	}
-
+	
+	@GetMapping("/vehiculo/{placa}")
+	public String getZonaCirculacion() {
+		return "Metodo para ZonaCirculacion";
+	}
+   
 }
