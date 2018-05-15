@@ -1,31 +1,35 @@
 package pe.sura.apivehiculo.entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name="vehiculo")
 public class Vehiculo {
 	
-	private String placa;
+	@Id
+	private Long placa;
+	@Column(name="anyo")
 	private String anio;
 	private String modelo;
 	private String marca;
+	private String zonacirculacion;
 	
-	private String zonaCirculacion;
-	private boolean asegurable;
-	
-	public Vehiculo(String placa, String anio, String modelo, String marca, String zonaCirculacion, boolean asegurable) {
+	public Vehiculo(Long placa, String anio, String modelo, String marca, String zonacirculacion) {
 		
 		super();
 		this.placa = placa;
 		this.anio = anio;
 		this.modelo = modelo;
 		this.marca = marca;
-		this.zonaCirculacion = zonaCirculacion;
-		this.asegurable = asegurable;
+		this.zonacirculacion = zonacirculacion;
 	}
 
-	public String getPlaca() {
+	public Long getPlaca() {
 		return placa;
 	}
 
-	public void setPlaca(String placa) {
+	public void setPlaca(Long placa) {
 		this.placa = placa;
 	}
 
@@ -53,20 +57,12 @@ public class Vehiculo {
 		this.marca = marca;
 	}
 
-	public String getZonaCirculacion() {
-		return zonaCirculacion;
+	public String getZonacirculacion() {
+		return zonacirculacion;
 	}
 
-	public void setZonaCirculacion(String zonaCirculacion) {
-		this.zonaCirculacion = zonaCirculacion;
-	}
-
-	public boolean isAsegurable() {
-		return asegurable;
-	}
-
-	public void setAsegurable(boolean asegurable) {
-		this.asegurable = asegurable;
+	public void setZonacirculacion(String zonacirculacion) {
+		this.zonacirculacion = zonacirculacion;
 	}
 	
 		
