@@ -1,6 +1,5 @@
 package pe.sura.apivehiculo.entidades;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -8,14 +7,14 @@ import javax.persistence.Id;
 public class Vehiculo {
 	
 	@Id
-	private Long placa;
-	@Column(name="anyo")
+	private String placa;
 	private String anio;
 	private String modelo;
 	private String marca;
 	private String zonacirculacion;
+	private boolean asegurable;
 	
-	public Vehiculo(Long placa, String anio, String modelo, String marca, String zonacirculacion) {
+	public Vehiculo(String placa, String anio, String modelo, String marca, String zonacirculacion, boolean asegurable) {
 		
 		super();
 		this.placa = placa;
@@ -23,13 +22,14 @@ public class Vehiculo {
 		this.modelo = modelo;
 		this.marca = marca;
 		this.zonacirculacion = zonacirculacion;
+		this.asegurable = asegurable;
 	}
 
-	public Long getPlaca() {
+	public String getPlaca() {
 		return placa;
 	}
 
-	public void setPlaca(Long placa) {
+	public void setPlaca(String placa) {
 		this.placa = placa;
 	}
 
@@ -64,8 +64,15 @@ public class Vehiculo {
 	public void setZonacirculacion(String zonacirculacion) {
 		this.zonacirculacion = zonacirculacion;
 	}
+
+	public boolean isAsegurable() {
+		return asegurable;
+	}
+
+	public void setAsegurable(boolean asegurable) {
+		this.asegurable = asegurable;
+	}
 	
-		
 	
  
 }
