@@ -1,0 +1,3 @@
+cd KitBasicoAutomPractica-Vehiculo
+gradle test
+exit
