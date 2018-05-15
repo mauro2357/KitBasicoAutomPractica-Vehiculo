@@ -36,8 +36,8 @@
 			
 			stage('Generar desplegable') { 
 				steps { 
-					powershell 'wget http://localhost:8090/shutdown'
-					powershell 'wget http://localhost:8091/shutdown'
+					powershell 'wget http://localhost:8585/shutdown'
+					powershell 'wget http://localhost:8586/shutdown'
 					bat "build.bat"
 					
 				}
@@ -45,7 +45,7 @@
 			
 			stage('Desplegar Integración') { 
 				steps { 
-					bat "deploy-bd.bat"
+					//bat "deploy-bd.bat"
 					bat "deploy-app.bat"
 				}
 			}
