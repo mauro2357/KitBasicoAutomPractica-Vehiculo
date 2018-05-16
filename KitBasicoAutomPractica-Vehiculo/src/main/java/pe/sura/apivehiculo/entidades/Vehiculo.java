@@ -14,6 +14,10 @@ public class Vehiculo {
 	private String zonacirculacion;
 	private boolean asegurable;
 	
+	public Vehiculo() {
+		super();
+	}
+	
 	public Vehiculo(String placa, String anio, String modelo, String marca, String zonacirculacion, boolean asegurable) {
 		
 		super();
