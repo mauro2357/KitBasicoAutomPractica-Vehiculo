@@ -31,14 +31,13 @@ public class VehiculoController {
 	}
 	
 	@GetMapping(path="/vehiculo/valida/{placa}", produces=MediaType.APPLICATION_JSON_VALUE) 
-	public VehiculoValidaResponse getValidacion(@PathVariable(value = "placa") String placa) throws Exception {
+	public VehiculoValidaResponse getValidacion(@PathVariable(value = "placa") String placa)  {
 		    
 		VehiculoValidaResponse response = new VehiculoValidaResponse();
 		String mensaje = vehiculoFacade.validar(placa);
 		response.setAsegurable(mensaje.equalsIgnoreCase("OK"));
 		response.setMensaje(mensaje);
-	
-               
+	   
 		
        return response;
 		
