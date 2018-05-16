@@ -45,22 +45,27 @@ public class VehiculoFacadeTestConFake {
 	}
 	
 	@Test
-	public void validarEsRobado() {
-		assertEquals("Es robado o no existe", vehiculoFacade.validar("ABC-123"));
+	public void validarNoExiste() {
+		assertEquals("No existe el vehiculo", vehiculoFacade.validar("ABC-113"));
 	}
 	
 	@Test
-	public void validarNoAutorizado() {
-		assertEquals("No se encuentra autorizado o no existe", vehiculoFacade.validar("ABC-124"));
+	public void validarExisteEsRobado() {
+		assertEquals("Es robado", vehiculoFacade.validar("ABC-123"));
 	}
 	
 	@Test
-	public void validarEsRobadoYNoAutorizado() {
-		assertEquals("Es robado y no se encuentra autorizado o no existe", vehiculoFacade.validar("ABC-125"));
+	public void validarExisteNoAutorizado() {
+		assertEquals("No se encuentra autorizado", vehiculoFacade.validar("ABC-124"));
 	}
 	
 	@Test
-	public void validarNoEsRobadoYAutorizado() {
+	public void validarExisteEsRobadoYNoAutorizado() {
+		assertEquals("Es robado y no se encuentra autorizado", vehiculoFacade.validar("ABC-125"));
+	}
+	
+	@Test
+	public void validarExisteNoEsRobadoYAutorizado() {
 		assertEquals("Ok", vehiculoFacade.validar("ABC-126"));
 	}
 	

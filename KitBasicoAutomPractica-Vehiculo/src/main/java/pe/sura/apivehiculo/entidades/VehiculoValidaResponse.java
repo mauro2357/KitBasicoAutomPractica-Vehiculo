@@ -2,21 +2,21 @@ package pe.sura.apivehiculo.entidades;
 
 public class VehiculoValidaResponse {
 
-	private boolean status;
+	private boolean asegurable;
 	private String mensaje;
 	
 	public VehiculoValidaResponse() {}
 	
-	public VehiculoValidaResponse(boolean status, String mensaje) {
+	public VehiculoValidaResponse(boolean asegurable, String mensaje) {
 		super();
-		this.status = status;
+		this.asegurable = asegurable;
 		this.mensaje = mensaje;
 	}
-	public boolean isStatus() {
-		return status;
+	public boolean isAsegurable() {
+		return asegurable;
 	}
-	public void setStatus(boolean status) {
-		this.status = status;
+	public void setAsegurable(boolean asegurable) {
+		this.asegurable = asegurable;
 	}
 	public String getMensaje() {
 		return mensaje;

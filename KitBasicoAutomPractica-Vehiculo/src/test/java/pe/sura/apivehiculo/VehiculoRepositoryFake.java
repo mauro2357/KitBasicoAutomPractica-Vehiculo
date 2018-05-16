@@ -21,6 +21,8 @@ public class VehiculoRepositoryFake implements VehiculoRepository{
 	public VehiculoRepositoryFake() {
 		vehiculos.add(new Vehiculo("ABC-123", "2018", "Chevrolet", "Megane", "Lima", true));
 		vehiculos.add(new Vehiculo("ABC-124", "2017", "Toyota", "Yaris", "Callao", true));
+		vehiculos.add(new Vehiculo("ABC-125", "1970", "Ford", "Camaro", "Arequipa", true));
+		vehiculos.add(new Vehiculo("ABC-126", "2016", "Lamoborgini", "Camaro", "Cuzco", true));
 	}
 
 	@Override

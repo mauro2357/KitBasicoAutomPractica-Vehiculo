@@ -26,21 +26,29 @@ public class VehiculoFacade implements IVehiculoFacade {
 	
 	@Override
 	public String validar(String placa) {
-		
-		
-		boolean esRobado = servicioPolicia.validaRobado(placa);
-		boolean autorizado = servicioTaller.validaAutorizado(placa);
-		
-		if(esRobado && !autorizado) {
-			return "Es robado y no se encuentra autorizado o no existe";
-		}else if(esRobado) {
-			return "Es robado o no existe";
-		}else if(!autorizado) {
-			return "No se encuentra autorizado o no existe";
-		}else {
-			return "Ok";
-		}
-		
+		try {				
+			Vehiculo vehiculo = vehiculoRepository.getOne(placa);
+			
+			if (vehiculo.getPlaca() != null){
+				
+				boolean esRobado = servicioPolicia.validaRobado(placa);
+				boolean autorizado = servicioTaller.validaAutorizado(placa);
+				
+				if(esRobado && !autorizado) {
+					return "Es robado y no se encuentra autorizado";
+				}else if(esRobado) {
+					return "Es robado";
+				}else if(!autorizado) {
+					return "No se encuentra autorizado";
+				}else {
+					return "Ok";
+				}
+			}else{
+				return "No existe el vehiculo";
+			}
+		}catch (EntityNotFoundException e){
+			return "No existe el vehiculo";
+		}	
 	}
 
 	
