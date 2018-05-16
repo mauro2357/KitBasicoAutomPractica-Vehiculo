@@ -69,4 +69,5 @@ public class VehiculoFacadeTestConFake {
 		assertEquals("Ok", vehiculoFacade.validar("ABC-126"));
 	}
 	
+	
 }

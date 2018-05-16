@@ -18,6 +18,8 @@ public class VehiculoRepositoryFake implements VehiculoRepository{
 	
 	private List<Vehiculo> vehiculos = new ArrayList<>();
 	
+	
+	
 	public VehiculoRepositoryFake() {
 		vehiculos.add(new Vehiculo("ABC-123", "2018", "Chevrolet", "Megane", "Lima", true));
 		vehiculos.add(new Vehiculo("ABC-124", "2017", "Toyota", "Yaris", "Callao", true));
