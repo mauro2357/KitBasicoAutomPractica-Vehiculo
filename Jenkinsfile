@@ -89,6 +89,7 @@
 			      }
 					bat 'mkdir "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
 					bat 'xcopy "KitBasicoAutomPractica-Vehiculo-Ops/config" "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
+					bat 'xcopy "KitBasicoAutomPractica-Vehiculo-Ops/DefaultFlywayConfig.config" ""'
 					bat "deploy-bd.bat"
 					bat "deploy-app.bat"
 				}
