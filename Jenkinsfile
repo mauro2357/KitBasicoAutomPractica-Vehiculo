@@ -83,12 +83,12 @@
 						branches: [[name: '*/master']], 
 						doGenerateSubmoduleConfigurations: false, 
 						extensions: [[$class: 'RelativeTargetDirectory', 
-							relativeTargetDir: 'KitBasicoAutomPractica-Vehiculo-Ops']], 
+							relativeTargetDir: 'KitBasicoAutomPractica-Vehiculo']], 
 						submoduleCfg: [], 
 						userRemoteConfigs: [[url: 'https://github.com/mauro2357/KitBasicoAutomPractica-Vehiculo.git']]])     
 			      }
 					bat 'mkdir "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
-					bat 'xcopy "config" "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
+					bat 'xcopy "KitBasicoAutomPractica-Vehiculo/config" "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
 					bat "deploy-bd.bat"
 					bat "deploy-app.bat"
 				}
