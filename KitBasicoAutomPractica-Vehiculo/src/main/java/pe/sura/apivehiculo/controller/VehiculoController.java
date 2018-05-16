@@ -18,11 +18,6 @@ public class VehiculoController {
 	
 	@Autowired
 	IVehiculoFacade vehiculoFacade;
-
-	@GetMapping("/vehiculo/hello")
-	public String getSaludo() {
-		return "Hola - API Vehiculo";
-	}
 	  
 	
 	@GetMapping("/vehiculo/zona/{placa}")
