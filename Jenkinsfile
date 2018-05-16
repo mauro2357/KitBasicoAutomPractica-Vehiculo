@@ -12,27 +12,27 @@
 			}
 		
 			
-			//stage('Analisis de código') { 
-			//	steps { 
-			//		withSonarQubeEnv('SonarQubeLocal') {
-			//			bat 'anali_code.bat'
-			//		}
-			//		
-			//	}
-			//}
+			stage('Analisis de código') { 
+				steps { 
+					withSonarQubeEnv('SonarQubeLocal') {
+						bat 'anali_code.bat'
+					}
+					
+				}
+			}
 			
-			//stage('Verificar calidad técnica') { 
-			//	steps { 
-			//		script{					
-			//		timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
-			//			def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
-			//			if (qg.status != 'OK') {
-			//			  error "Pipeline aborted due to quality gate failure: ${qg.status}"
-			//			}
-			//		}
-			//		}
-			//	}
-			//}
+			stage('Verificar calidad técnica') { 
+				steps { 
+					script{					
+					timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
+						def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
+						if (qg.status != 'OK') {
+						  error "Pipeline aborted due to quality gate failure: ${qg.status}"
+						}
+					}
+					}
+				}
+			}
 			
 			stage('Generar desplegable') { 
 				steps { 
@@ -89,7 +89,7 @@
 					}
 					bat 'mkdir "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
 					bat 'xcopy "KitBasicoAutomPractica-Vehiculo-Ops/config" "KitBasicoAutomPractica-Vehiculo/build/libs/config"'
-					bat 'copy "KitBasicoAutomPractica-Vehiculo-Ops/DefaultFlywayConfig.config" "/DefaultFlywayConfig.config"'
+					bat 'copy "KitBasicoAutomPractica-Vehiculo-Ops/DefaultFlywayConfig.config" "/"'
 					bat "deploy-bd.bat"
 					bat "deploy-app.bat"
 				}
