@@ -47,6 +47,7 @@
 				steps { 
 					bat "deploy-bd.bat"
 					bat "deploy-app.bat"
+					archiveArtifacts artifacts: 'KitBasicoAutomPractica-Vehiculo/*.txt', excludes: 'output/*.md'
 				}
 			}
 
@@ -92,6 +93,7 @@
 					bat 'copy KitBasicoAutomPractica-Vehiculo-Ops/DefaultFlywayConfig.config /DefaultFlywayConfig.config'
 					bat "deploy-bd.bat"
 					bat "deploy-app.bat"
+					archiveArtifacts artifacts: 'KitBasicoAutomPractica-Vehiculo/*.txt', excludes: 'output/*.md'
 				}
 			}
 			
